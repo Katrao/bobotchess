@@ -11,6 +11,8 @@
 #include <array>
 #include <cstdlib>
 #include <algorithm>
+#include <atomic>
+#include <unordered_map>
 #ifdef _MSC_VER 
 #include <intrin.h>
 #endif
@@ -288,7 +290,13 @@ class Move {
             promo = r;
             flag = f;
         }
-        Move(){}
+        Move() {
+            piece = 0;
+            startPos = 0;
+            endPos = 0;
+            promo = 0;
+            flag = -1;
+        }
         bool moveEq(Move m) {
             int mp = m.piece;
             int ms = m.startPos;
@@ -437,6 +445,16 @@ struct Board {
     u64 b;
     u64 full;
 
+    // Sanity check
+    bool sanity() {
+        u64 compw = wP | wN | wB | wR | wQ | wK;
+        u64 compb = bP | bN | bB | bR | bQ | bK;
+        if (compw != w) return false;
+        if (compb != b) return false;
+        if ((compw | compb) != full) return false;
+        return true;
+    }
+
     // Game state
     bool whiteToMove = true;
     bool whiteKingMoved = false;
@@ -573,7 +591,7 @@ struct Board {
         if (m.flag == 5) {
             if (m.endPos == 2) {wR ^= 1ULL << a1; wR ^= 1ULL << d1;}
             if (m.endPos == 6) {wR ^= 1ULL << h1; wR ^= 1ULL << f1;}
-            if (m.endPos == 57) {bR ^= 1ULL << a8; bR ^= 1ULL << d8;}
+            if (m.endPos == 58) {bR ^= 1ULL << a8; bR ^= 1ULL << d8;}
             if (m.endPos == 62) {bR ^= 1ULL << h8; bR ^= 1ULL << f8;}
         }
         whiteToMove = !whiteToMove;
@@ -659,7 +677,7 @@ struct Board {
         if (m.flag == 5) {
             if (m.endPos == 2) {wR ^= 1ULL << a1; wR ^= 1ULL << d1;}
             if (m.endPos == 6) {wR ^= 1ULL << h1; wR ^= 1ULL << f1;}
-            if (m.endPos == 57) {bR ^= 1ULL << a8; bR ^= 1ULL << d8;}
+            if (m.endPos == 58) {bR ^= 1ULL << a8; bR ^= 1ULL << d8;}
             if (m.endPos == 62) {bR ^= 1ULL << h8; bR ^= 1ULL << f8;}
         }
         whiteToMove = !whiteToMove;
@@ -757,6 +775,86 @@ struct Generator {
     };
     u64 lineBetween[64][64];
 
+    u64 r64m() {
+        return (rng() & rng() & rng());
+    }
+
+    u64 genMagic(bool isBishop, int s, u64 mask, int bits) {
+        int perms = 1 << bits;
+        vector<u64> occ(perms);
+        vector<u64> atks(perms);
+        for (int i = 0; i < perms; ++i) {
+            u64 blockers = 0ULL;
+            u64 tmp = mask;
+            for (int j = 0; j < bits; ++j) {
+                int bpos = getLSB(tmp);
+                if (i & (1 << j)) setBit(blockers, bpos);
+                popBit(tmp, bpos);
+            }
+            occ[i] = blockers;
+            if (isBishop) {
+                atks[i] = 0ULL;
+                int r = s / 8, f = s % 8;
+                for (int rr = r + 1, ff = f + 1; rr <= 7 && ff <= 7; ++rr, ++ff) { int sq = rr*8+ff; setBit(atks[i], sq); if (occ[i] & (1ULL<<sq)) break; }
+                for (int rr = r + 1, ff = f - 1; rr <= 7 && ff >= 0; ++rr, --ff) { int sq = rr*8+ff; setBit(atks[i], sq); if (occ[i] & (1ULL<<sq)) break; }
+                for (int rr = r - 1, ff = f + 1; rr >= 0 && ff <= 7; --rr, ++ff) { int sq = rr*8+ff; setBit(atks[i], sq); if (occ[i] & (1ULL<<sq)) break; }
+                for (int rr = r - 1, ff = f - 1; rr >= 0 && ff >= 0; --rr, --ff) { int sq = rr*8+ff; setBit(atks[i], sq); if (occ[i] & (1ULL<<sq)) break; }
+            } else {
+                atks[i] = 0ULL;
+                int r = s / 8, f = s % 8;
+                for (int rr = r + 1; rr <= 7; ++rr) { int sq = rr*8+f; setBit(atks[i], sq); if (occ[i] & (1ULL<<sq)) break; }
+                for (int rr = r - 1; rr >= 0; --rr) { int sq = rr*8+f; setBit(atks[i], sq); if (occ[i] & (1ULL<<sq)) break; }
+                for (int ff = f + 1; ff <= 7; ++ff) { int sq = r*8+ff; setBit(atks[i], sq); if (occ[i] & (1ULL<<sq)) break; }
+                for (int ff = f - 1; ff >= 0; --ff) { int sq = r*8+ff; setBit(atks[i], sq); if (occ[i] & (1ULL<<sq)) break; }
+            }
+        }
+
+        int shift = 64 - bits;
+        while (true) {
+            u64 magic = r64m();
+            if (popcount((magic * mask) >> 56) < 6) continue;
+            bool ok = true;
+            unordered_map<u64,u64> used;
+            used.reserve(perms*2);
+            for (int i = 0; i < perms; ++i) {
+                u64 index = (occ[i] * magic) >> shift;
+                auto it = used.find(index);
+                if (it == used.end()) used[index] = atks[i];
+                else if (it->second != atks[i]) { ok = false; break; }
+            }
+            if (ok) return magic;
+        }
+        return 0ULL;
+    }
+
+    void prodMagic() {
+        cout << "Generating magics (this may take a while)..." << endl;
+        Generator tmpGen;
+        tmpGen.initLeapers();
+        for (int s = 0; s < 64; s++) {
+            int tr = s/8, tf = s%8;
+            u64 bmask=0ULL, rmask=0ULL;
+            for (int r = tr+1; r < 7; ++r) rmask |= (1ULL << (r*8+tf));
+            for (int r = tr-1; r > 0; --r) rmask |= (1ULL << (r*8+tf));
+            for (int f = tf+1; f < 7; ++f) rmask |= (1ULL << (tr*8+f));
+            for (int f = tf-1; f > 0; --f) rmask |= (1ULL << (tr*8+f));
+            for (int r = tr+1, f = tf+1; r < 7 && f < 7; ++r, ++f) bmask |= (1ULL << (r*8+f));
+            for (int r = tr+1, f = tf-1; r < 7 && f > 0; ++r, --f) bmask |= (1ULL << (r*8+f));
+            for (int r = tr-1, f = tf+1; r > 0 && f < 7; --r, ++f) bmask |= (1ULL << (r*8+f));
+            for (int r = tr-1, f = tf-1; r > 0 && f > 0; --r, --f) bmask |= (1ULL << (r*8+f));
+            int bcount = popcount(bmask);
+            int rcount = popcount(rmask);
+            int bshift = 64 - bcount;
+            int rshift = 64 - rcount;
+            u64 bm = genMagic(true, s, bmask, bcount);
+            u64 rm = genMagic(false, s, rmask, rcount);
+            if (bm == 0ULL) cout << "[FAIL] bishop magic not found for square " << s << endl;
+            if (rm == 0ULL) cout << "[FAIL] rook magic not found for square " << s << endl;
+            cout << "       square " << s << " bishopMagic=0x" << hex << bm << dec << " bishopShift=" << bshift << " rookMagic=0x" << hex << rm << dec << " rookShift=" << rshift << endl;
+            bishopMagics[s] = bm; bishopShifts[s] = bshift; rookMagics[s] = rm; rookShifts[s] = rshift;
+        }
+        cout << "Done generating magics." << endl;
+    }
 
     const u64 afile = 0x0101010101010101ULL;
     const u64 hfile = 0x8080808080808080ULL;
@@ -872,7 +970,71 @@ struct Generator {
         u64 index = (blockers * rookMagics[square]) >> rookShifts[square];
         return rookAttacks[square][index];
     }
+/*
+    u64 getBishopAttacks(int square, u64 blockers) {
+        // fallback direct ray generation (correct, not magic-indexed)
+        u64 attacks = 0ULL;
+        int r = square / 8;
+        int f = square % 8;
+        // NE
+        for (int rr = r + 1, ff = f + 1; rr <= 7 && ff <= 7; ++rr, ++ff) {
+            int s = rr * 8 + ff;
+            setBit(attacks, s);
+            if (blockers & (1ULL << s)) break;
+        }
+        // NW
+        for (int rr = r + 1, ff = f - 1; rr <= 7 && ff >= 0; ++rr, --ff) {
+            int s = rr * 8 + ff;
+            setBit(attacks, s);
+            if (blockers & (1ULL << s)) break;
+        }
+        // SE
+        for (int rr = r - 1, ff = f + 1; rr >= 0 && ff <= 7; --rr, ++ff) {
+            int s = rr * 8 + ff;
+            setBit(attacks, s);
+            if (blockers & (1ULL << s)) break;
+        }
+        // SW
+        for (int rr = r - 1, ff = f - 1; rr >= 0 && ff >= 0; --rr, --ff) {
+            int s = rr * 8 + ff;
+            setBit(attacks, s);
+            if (blockers & (1ULL << s)) break;
+        }
+        return attacks;
+    }
 
+    u64 getRookAttacks(int square, u64 blockers) {
+        // fallback direct ray generation (correct, not magic-indexed)
+        u64 attacks = 0ULL;
+        int r = square / 8;
+        int f = square % 8;
+        // North
+        for (int rr = r + 1; rr <= 7; ++rr) {
+            int s = rr * 8 + f;
+            setBit(attacks, s);
+            if (blockers & (1ULL << s)) break;
+        }
+        // South
+        for (int rr = r - 1; rr >= 0; --rr) {
+            int s = rr * 8 + f;
+            setBit(attacks, s);
+            if (blockers & (1ULL << s)) break;
+        }
+        // East
+        for (int ff = f + 1; ff <= 7; ++ff) {
+            int s = r * 8 + ff;
+            setBit(attacks, s);
+            if (blockers & (1ULL << s)) break;
+        }
+        // West
+        for (int ff = f - 1; ff >= 0; --ff) {
+            int s = r * 8 + ff;
+            setBit(attacks, s);
+            if (blockers & (1ULL << s)) break;
+        }
+        return attacks;
+    }
+*/
     void initLineBetween() {
         for (int s1 = 0; s1 < 64; ++s1) {
             for (int s2 = 0; s2 < 64; ++s2) {
@@ -896,6 +1058,7 @@ struct Generator {
 
     void initGen() {
         cout << "Initializing lookup tables... " << endl;
+        prodMagic();
         cout << "   Initializing leapers... " << endl;
         initLeapers();
         cout << "   Initializing magic bitboards... " << endl;
@@ -1158,37 +1321,31 @@ struct Generator {
     }
 
     void generateQueenMoves(vector<Move>& list, Board& b, u64 msk) {
-        u64 bishops = b.whiteToMove ? b.wQ : b.bQ;
-        u64 rooks = b.whiteToMove ? b.wQ : b.bQ;
+        u64 queens = b.whiteToMove ? b.wQ : b.bQ;
         int p = b.whiteToMove ? 13 : 21;
         u64 friendly = b.whiteToMove ? b.w : b.b;
 
-        while (bishops) {
-            int s = getLSB(bishops);
-            popBit(bishops, s);
-            u64 blockers = b.full & bishopMasks[s];
-            int index = (blockers * bishopMagics[s]) >> bishopShifts[s];
-            u64 attacks = bishopAttacks[s][index];
-            attacks &= ~friendly;
-            attacks &= msk;
-            while (attacks) {
-                int e = getLSB(attacks);
-                popBit(attacks, e);
+        while (queens) {
+            int s = getLSB(queens);
+            popBit(queens, s);
+            u64 bblockers = b.full & bishopMasks[s];
+            int bindex = (bblockers * bishopMagics[s]) >> bishopShifts[s];
+            u64 battacks = bishopAttacks[s][bindex];
+            battacks &= ~friendly;
+            battacks &= msk;
+            while (battacks) {
+                int e = getLSB(battacks);
+                popBit(battacks, e);
                 list.push_back(Move(p, s, e, 0, 0));
             }
-        }
-
-        while (rooks) {
-            int s = getLSB(rooks);
-            popBit(rooks, s);
-            u64 blockers = b.full & rookMasks[s];
-            int index = (blockers * rookMagics[s]) >> rookShifts[s];
-            u64 attacks = rookAttacks[s][index];
-            attacks &= ~friendly;
-            attacks &= msk;
-            while (attacks) {
-                int e = getLSB(attacks);
-                popBit(attacks, e);
+            u64 rblockers = b.full & rookMasks[s];
+            int rindex = (rblockers * rookMagics[s]) >> rookShifts[s];
+            u64 rattacks = rookAttacks[s][rindex];
+            rattacks &= ~friendly;
+            rattacks &= msk;
+            while (rattacks) {
+                int e = getLSB(rattacks);
+                popBit(rattacks, e);
                 list.push_back(Move(p, s, e, 0, 0));
             }
         }
@@ -1228,9 +1385,11 @@ struct Generator {
             u64 btray = lineBetween[k][ps];
             u64 pray = btray & b.full;
             if (popcount(pray) == 1) {
-                int psq = getLSB(pray);
-                setBit(pinned, psq);
-                pinrays[psq] = btray | (1ULL << ps);
+                if (pray & (b.whiteToMove ? b.w : b.b)) {
+                    int psq = getLSB(pray);
+                    setBit(pinned, psq);
+                    pinrays[psq] = btray | (1ULL << ps);
+                }
             }
         }
 
@@ -1266,6 +1425,13 @@ struct Generator {
                 generateQueenMoves(moves, temp, pmmask);
             }
         }
+        moves.erase(
+            remove_if(moves.begin(), moves.end(), [&](const Move& m) {
+                if (m.flag != 3) return false;
+                return !isLegal(b, m, h);
+            }),
+            moves.end()
+        );
         return moves;
     }
 
@@ -1553,11 +1719,17 @@ void perft(Game& g, int depth, u64& nodes) {
     for (Move& move : moves) {
         MoveCache cache = g.board.makeMove(move, g.comp);
         perft(g, depth - 1, nodes);
+        if (!g.board.sanity()) {
+            cout << "[ERROR] Sanity check failed after move " << move.srep() << endl;
+            exit(1);
+        }
         g.board.unmakeMove(move, cache, g.comp);
     }
 }
 
 int perft(int depth) {
+    system("cls");
+    system("cls");
     auto start = chrono::steady_clock::now();
     auto sthr = chrono::system_clock::now();
     cout << "Execution started at " << formatTimePoint(sthr) << ". " << endl << endl;
@@ -1565,12 +1737,7 @@ int perft(int depth) {
     string tstp = "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1";
     Game game;
     game.board.loadFEN(sp);
-    cout << "Generator leapers initializing..." << endl;
-    game.generator.initLeapers();
-    cout << "Leapers finished." << endl;
-    cout << "Generator magics initializing..." << endl;
-    game.generator.initMagic();
-    cout << "Magics finished." << endl;
+    game.generator.initGen();
     cout << "Board initialized with FEN. Running PERFT. " << endl;
     
     u64 ct = 0;
@@ -1606,6 +1773,8 @@ void perftsplit(Game& g, int depth, u64& nodes) {
 }
 
 int perftsplit(int depth) {
+    system("cls");
+    system("cls");
     auto start = chrono::steady_clock::now();
     auto sthr = chrono::system_clock::now();
     cout << "Execution started at " << formatTimePoint(sthr) << ". " << endl << endl;
@@ -1615,9 +1784,10 @@ int perftsplit(int depth) {
     game.board.loadFEN(sp);
     game.generator.initGen();
     cout << "Board initialized with FEN. Running PERFT. " << endl;
-    game.board.makeMove(Move(9, 14, 30, 0, 2), game.comp);
-    game.board.makeMove(Move(17, 48, 40, 0, 2), game.comp);
-    printBitboard(game.board.full);
+    // game.board.makeMove(Move(9, 14, 30, 0, 2), game.comp);
+    // game.board.makeMove(Move(17, 55, 47, 0, 2), game.comp);
+    // game.board.makeMove(Move(9, 12, 28, 0, 2), game.comp);
+    // printBitboard(game.board.full);
     
     u64 ct = 0;
     perftsplit(game, depth, ct);
@@ -1631,6 +1801,32 @@ int perftsplit(int depth) {
     return 0;
 }
 
+int perftrange(int depth) {
+    system("cls");
+    system("cls");
+    auto start = chrono::steady_clock::now();
+    auto sthr = chrono::system_clock::now();
+    cout << "Execution started at " << formatTimePoint(sthr) << ". " << endl << endl;
+    string sp = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+    string tstp = "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1";
+    Game game;
+    game.board.loadFEN(sp);
+    game.generator.initGen();
+    cout << "Board initialized with FEN. Running PERFT. " << endl;
+    
+    for (int d = 0; d <= depth; d++) {
+        u64 ct = 0;
+        perft(game, d, ct);
+        cout << "PERFT with depth " << to_string(d) << ": " << to_string(ct) << endl;
+    }
+    auto end = chrono::steady_clock::now();
+    auto edhr = chrono::system_clock::now();
+    chrono::duration<double> elapsed = end - start;
+    cout << "Execution finished at " << formatTimePoint(edhr) << ". " << endl;
+    cout << "Time elapsed: " << elapsed.count() << " seconds." << endl;
+    return 0;
+}
+
 int main() {
-    return perftsplit(1);
+    return perftsplit(4);
 }

@@ -1,0 +1,2054 @@
+DEBUG MAGIC CHECK for square 0 (1,0)
+ bishopMask = 0x40201008040200 popcount=6
+ bishopMagic = 0x40040844404084 shift=58 tableSize=64
+All entries match for square 0
+DEBUG MAGIC CHECK for square 1 (1,1)
+ bishopMask = 0x402010080400 popcount=5
+ bishopMagic = 0x2004208a004208 shift=59 tableSize=32
+All entries match for square 1
+DEBUG MAGIC CHECK for square 2 (1,2)
+ bishopMask = 0x4020100a00 popcount=5
+ bishopMagic = 0x101010101010101 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x804020100a00
+ expected (raygen) = 0x804020110a00
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . X |
+5 | . . . . . . X . |
+4 | . . . . . X . . |
+3 | . . . . X . . . |
+2 | . X . X . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 141012904184320
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . X |
+5 | . . . . . . X . |
+4 | . . . . . X . . |
+3 | X . . . X . . . |
+2 | . X . X . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 141012904249856
+DEBUG MAGIC CHECK for square 3 (1,3)
+ bishopMask = 0x40221400 popcount=5
+ bishopMagic = 0x202020202020202 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x8040221400
+ expected (raygen) = 0x8041221400
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | . . . . . . . X |
+4 | . . . . . . X . |
+3 | . X . . . X . . |
+2 | . . X . X . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 550831789056
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | . . . . . . . X |
+4 | X . . . . . X . |
+3 | . X . . . X . . |
+2 | . . X . X . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 550848566272
+DEBUG MAGIC CHECK for square 4 (1,4)
+ bishopMask = 0x2442800 popcount=5
+ bishopMagic = 0x404040404040404 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x102442800
+ expected (raygen) = 0x182442800
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | X . . . . . . . |
+4 | . X . . . . . . |
+3 | . . X . . . X . |
+2 | . . . X . X . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 4332988416
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | X . . . . . . . |
+4 | . X . . . . . X |
+3 | . . X . . . X . |
+2 | . . . X . X . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 6480472064
+DEBUG MAGIC CHECK for square 5 (1,5)
+ bishopMask = 0x204085000 popcount=5
+ bishopMagic = 0x808080808080808 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x10204085000
+ expected (raygen) = 0x10204885000
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | X . . . . . . . |
+5 | . X . . . . . . |
+4 | . . X . . . . . |
+3 | . . . X . . . . |
+2 | . . . . X . X . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1108169216000
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | X . . . . . . . |
+5 | . X . . . . . . |
+4 | . . X . . . . . |
+3 | . . . X . . . X |
+2 | . . . . X . X . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1108177604608
+DEBUG MAGIC CHECK for square 6 (1,6)
+ bishopMask = 0x20408102000 popcount=5
+ bishopMagic = 0x401004020080100 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x10a000
+ expected (raygen) = 0x102040810a000
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | . . . . . . . . |
+4 | . . . . . . . . |
+3 | . . . . X . . . |
+2 | . . . . . X . X |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1089536
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | X . . . . . . . |
+6 | . X . . . . . . |
+5 | . . X . . . . . |
+4 | . . . X . . . . |
+3 | . . . . X . . . |
+2 | . . . . . X . X |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 283691315142656
+DEBUG MAGIC CHECK for square 7 (1,7)
+ bishopMask = 0x2040810204000 popcount=6
+ bishopMagic = 0x40040844404084 shift=58 tableSize=64
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x204000
+ expected (raygen) = 0x102040810204000
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | . . . . . . . . |
+4 | . . . . . . . . |
+3 | . . . . . X . . |
+2 | . . . . . . X . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 2113536
+ expected bitboard:
+  +-----------------+
+8 | X . . . . . . . |
+7 | . X . . . . . . |
+6 | . . X . . . . . |
+5 | . . . X . . . . |
+4 | . . . . X . . . |
+3 | . . . . . X . . |
+2 | . . . . . . X . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 72624976668147712
+DEBUG MAGIC CHECK for square 8 (2,0)
+ bishopMask = 0x20100804020000 popcount=5
+ bishopMagic = 0x2004208a004208 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x100804020002
+ expected (raygen) = 0x4020100804020002
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . X . . . |
+5 | . . . X . . . . |
+4 | . . X . . . . . |
+3 | . X . . . . . . |
+2 | . . . . . . . . |
+1 | . X . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 17626613022722
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . X . |
+7 | . . . . . X . . |
+6 | . . . . X . . . |
+5 | . . . X . . . . |
+4 | . . X . . . . . |
+3 | . X . . . . . . |
+2 | . . . . . . . . |
+1 | . X . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 4620710844295151618
+DEBUG MAGIC CHECK for square 9 (2,1)
+ bishopMask = 0x40201008040000 popcount=5
+ bishopMagic = 0x101010101010101 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x50005
+ expected (raygen) = 0x8040201008050005
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | . . . . . . . . |
+4 | . . . . . . . . |
+3 | X . X . . . . . |
+2 | . . . . . . . . |
+1 | X . X . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 327685
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . X |
+7 | . . . . . . X . |
+6 | . . . . . X . . |
+5 | . . . . X . . . |
+4 | . . . X . . . . |
+3 | X . X . . . . . |
+2 | . . . . . . . . |
+1 | X . X . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 9241421688590368773
+DEBUG MAGIC CHECK for square 10 (2,2)
+ bishopMask = 0x4020100a0000 popcount=5
+ bishopMagic = 0x202020202020202 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x804020100a000a
+ expected (raygen) = 0x804020110a000a
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . X |
+6 | . . . . . . X . |
+5 | . . . . . X . . |
+4 | . . . . X . . . |
+3 | . X . X . . . . |
+2 | . . . . . . . . |
+1 | . X . X . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 36099303471185930
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . X |
+6 | . . . . . . X . |
+5 | . . . . . X . . |
+4 | X . . . X . . . |
+3 | . X . X . . . . |
+2 | . . . . . . . . |
+1 | . X . X . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 36099303487963146
+DEBUG MAGIC CHECK for square 11 (2,3)
+ bishopMask = 0x4022140000 popcount=5
+ bishopMagic = 0x404040404040404 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x4122140014
+ expected (raygen) = 0x804122140014
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | X . . . . . X . |
+4 | . X . . . X . . |
+3 | . . X . X . . . |
+2 | . . . . . . . . |
+1 | . . X . X . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 279744610324
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . X |
+5 | X . . . . . X . |
+4 | . X . . . X . . |
+3 | . . X . X . . . |
+2 | . . . . . . . . |
+1 | . . X . X . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 141017232965652
+DEBUG MAGIC CHECK for square 12 (2,4)
+ bishopMask = 0x244280000 popcount=5
+ bishopMagic = 0x808080808080808 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x10204280028
+ expected (raygen) = 0x18244280028
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | X . . . . . . . |
+5 | . X . . . . . . |
+4 | . . X . . . . . |
+3 | . . . X . X . . |
+2 | . . . . . . . . |
+1 | . . . X . X . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1108171292712
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | X . . . . . . . |
+5 | . X . . . . . X |
+4 | . . X . . . X . |
+3 | . . . X . X . . |
+2 | . . . . . . . . |
+1 | . . . X . X . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1659000848424
+DEBUG MAGIC CHECK for square 13 (2,5)
+ bishopMask = 0x20408500000 popcount=5
+ bishopMagic = 0x401004020080100 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x80500050
+ expected (raygen) = 0x1020488500050
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | . . . . . . . . |
+4 | . . . . . . . X |
+3 | . . . . X . X . |
+2 | . . . . . . . . |
+1 | . . . . X . X . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 2152726608
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | X . . . . . . . |
+6 | . X . . . . . . |
+5 | . . X . . . . . |
+4 | . . . X . . . X |
+3 | . . . . X . X . |
+2 | . . . . . . . . |
+1 | . . . . X . X . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 283693466779728
+DEBUG MAGIC CHECK for square 14 (2,6)
+ bishopMask = 0x2040810200000 popcount=5
+ bishopMagic = 0x4002082208080 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0xa000a0
+ expected (raygen) = 0x102040810a000a0
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | . . . . . . . . |
+4 | . . . . . . . . |
+3 | . . . . . X . X |
+2 | . . . . . . . . |
+1 | . . . . . X . X |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 10485920
+ expected bitboard:
+  +-----------------+
+8 | X . . . . . . . |
+7 | . X . . . . . . |
+6 | . . X . . . . . |
+5 | . . . X . . . . |
+4 | . . . . X . . . |
+3 | . . . . . X . X |
+2 | . . . . . . . . |
+1 | . . . . . X . X |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 72624976676520096
+DEBUG MAGIC CHECK for square 15 (2,7)
+ bishopMask = 0x4081020400000 popcount=5
+ bishopMagic = 0x40810a410820200 shift=59 tableSize=32
+MISMATCH at permutation i=4 index=1
+ blockers masked   = 0x1000000000
+ tableVal (magic)  = 0x4081020400040
+ expected (raygen) = 0x1020400040
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . X . . . . . |
+6 | . . . X . . . . |
+5 | . . . . X . . . |
+4 | . . . . . X . . |
+3 | . . . . . . X . |
+2 | . . . . . . . . |
+1 | . . . . . . X . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1134765260406848
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | . . . . X . . . |
+4 | . . . . . X . . |
+3 | . . . . . . X . |
+2 | . . . . . . . . |
+1 | . . . . . . X . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 69260542016
+DEBUG MAGIC CHECK for square 16 (3,0)
+ bishopMask = 0x10080402000200 popcount=5
+ bishopMagic = 0x81020400204080 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x402000200
+ expected (raygen) = 0x2010080402000204
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | . . X . . . . . |
+4 | . X . . . . . . |
+3 | . . . . . . . . |
+2 | . X . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 17213424128
+ expected bitboard:
+  +-----------------+
+8 | . . . . . X . . |
+7 | . . . . X . . . |
+6 | . . . X . . . . |
+5 | . . X . . . . . |
+4 | . X . . . . . . |
+3 | . . . . . . . . |
+2 | . X . . . . . . |
+1 | . . X . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 2310355422147510788
+DEBUG MAGIC CHECK for square 17 (3,1)
+ bishopMask = 0x20100804000400 popcount=5
+ bishopMagic = 0x40400804080400 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x100805000500
+ expected (raygen) = 0x4020100805000508
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . X . . . |
+5 | . . . X . . . . |
+4 | X . X . . . . . |
+3 | . . . . . . . . |
+2 | X . X . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 17626629670144
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . X . |
+7 | . . . . . X . . |
+6 | . . . . X . . . |
+5 | . . . X . . . . |
+4 | X . X . . . . . |
+3 | . . . . . . . . |
+2 | X . X . . . . . |
+1 | . . . X . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 4620710844311799048
+DEBUG MAGIC CHECK for square 18 (3,2)
+ bishopMask = 0x4020100a000a00 popcount=7
+ bishopMagic = 0x20802004020080 shift=57 tableSize=128
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0xa000a10
+ expected (raygen) = 0x804020110a000a11
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | . . . . . . . . |
+4 | . X . X . . . . |
+3 | . . . . . . . . |
+2 | . X . X . . . . |
+1 | . . . . X . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 167774736
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . X |
+7 | . . . . . . X . |
+6 | . . . . . X . . |
+5 | X . . . X . . . |
+4 | . X . X . . . . |
+3 | . . . . . . . . |
+2 | . X . X . . . . |
+1 | X . . . X . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 9241421692918565393
+DEBUG MAGIC CHECK for square 19 (3,3)
+ bishopMask = 0x402214001400 popcount=7
+ bishopMagic = 0x100100200408804 shift=57 tableSize=128
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x80402214001400
+ expected (raygen) = 0x80412214001422
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . X |
+6 | . . . . . . X . |
+5 | . X . . . X . . |
+4 | . . X . X . . . |
+3 | . . . . . . . . |
+2 | . . X . X . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 36099312127579136
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . X |
+6 | X . . . . . X . |
+5 | . X . . . X . . |
+4 | . . X . X . . . |
+3 | . . . . . . . . |
+2 | . . X . X . . . |
+1 | . X . . . X . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 36100411639206946
+DEBUG MAGIC CHECK for square 20 (3,4)
+ bishopMask = 0x24428002800 popcount=7
+ bishopMagic = 0x400208440020100 shift=57 tableSize=128
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x4428002840
+ expected (raygen) = 0x1824428002844
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | . . X . . . X . |
+4 | . . . X . X . . |
+3 | . . . . . . . . |
+2 | . . . X . X . . |
+1 | . . . . . . X . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 292728875072
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | X . . . . . . . |
+6 | . X . . . . . X |
+5 | . . X . . . X . |
+4 | . . . X . X . . |
+3 | . . . . . . . . |
+2 | . . . X . X . . |
+1 | . . X . . . X . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 424704217196612
+DEBUG MAGIC CHECK for square 21 (3,5)
+ bishopMask = 0x2040850005000 popcount=7
+ bishopMagic = 0x2044081008080 shift=57 tableSize=128
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x2048850005088
+ expected (raygen) = 0x102048850005088
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . X . . . . . . |
+6 | . . X . . . . . |
+5 | . . . X . . . X |
+4 | . . . . X . X . |
+3 | . . . . . . . . |
+2 | . . . . X . X . |
+1 | . . . X . . . X |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 567933457682568
+ expected bitboard:
+  +-----------------+
+8 | X . . . . . . . |
+7 | . X . . . . . . |
+6 | . . X . . . . . |
+5 | . . . X . . . X |
+4 | . . . . X . X . |
+3 | . . . . . . . . |
+2 | . . . . X . X . |
+1 | . . . X . . . X |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 72625527495610504
+DEBUG MAGIC CHECK for square 22 (3,6)
+ bishopMask = 0x4081020002000 popcount=5
+ bishopMagic = 0x408020801080 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0xa000a010
+ expected (raygen) = 0x2040810a000a010
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | . . . . . . . . |
+4 | . . . . . X . X |
+3 | . . . . . . . . |
+2 | . . . . . X . X |
+1 | . . . . X . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 2684395536
+ expected bitboard:
+  +-----------------+
+8 | . X . . . . . . |
+7 | . . X . . . . . |
+6 | . . . X . . . . |
+5 | . . . . X . . . |
+4 | . . . . . X . X |
+3 | . . . . . . . . |
+2 | . . . . . X . X |
+1 | . . . . X . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 145249955479592976
+DEBUG MAGIC CHECK for square 23 (3,7)
+ bishopMask = 0x8102040004000 popcount=5
+ bishopMagic = 0x400408220401080 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x102040004020
+ expected (raygen) = 0x408102040004020
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . X . . . |
+5 | . . . . . X . . |
+4 | . . . . . . X . |
+3 | . . . . . . . . |
+2 | . . . . . . X . |
+1 | . . . . . X . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 17730698756128
+ expected bitboard:
+  +-----------------+
+8 | . . X . . . . . |
+7 | . . . X . . . . |
+6 | . . . . X . . . |
+5 | . . . . . X . . |
+4 | . . . . . . X . |
+3 | . . . . . . . . |
+2 | . . . . . . X . |
+1 | . . . . . X . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 290499906664153120
+DEBUG MAGIC CHECK for square 24 (4,0)
+ bishopMask = 0x8040200020400 popcount=5
+ bishopMagic = 0x801082004000200 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x40200020400
+ expected (raygen) = 0x1008040200020408
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . X . . . . . |
+5 | . X . . . . . . |
+4 | . . . . . . . . |
+3 | . X . . . . . . |
+2 | . . X . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 4406636577792
+ expected bitboard:
+  +-----------------+
+8 | . . . . X . . . |
+7 | . . . X . . . . |
+6 | . . X . . . . . |
+5 | . X . . . . . . |
+4 | . . . . . . . . |
+3 | . X . . . . . . |
+2 | . . X . . . . . |
+1 | . . . X . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1155177711057110024
+DEBUG MAGIC CHECK for square 25 (4,1)
+ bishopMask = 0x10080400040800 popcount=5
+ bishopMagic = 0x804010020040100 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x2010080500050000
+ expected (raygen) = 0x2010080500050810
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . X . . |
+7 | . . . . X . . . |
+6 | . . . X . . . . |
+5 | X . X . . . . . |
+4 | . . . . . . . . |
+3 | X . X . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 2310355426409250816
+ expected bitboard:
+  +-----------------+
+8 | . . . . . X . . |
+7 | . . . . X . . . |
+6 | . . . X . . . . |
+5 | X . X . . . . . |
+4 | . . . . . . . . |
+3 | X . X . . . . . |
+2 | . . . X . . . . |
+1 | . . . . X . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 2310355426409252880
+DEBUG MAGIC CHECK for square 26 (4,2)
+ bishopMask = 0x20100a000a1000 popcount=7
+ bishopMagic = 0x404004080800400 shift=57 tableSize=128
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x100a000a1020
+ expected (raygen) = 0x4020110a000a1120
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . X . . . |
+5 | . X . X . . . . |
+4 | . . . . . . . . |
+3 | . X . X . . . . |
+2 | . . . . X . . . |
+1 | . . . . . X . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 17635136376864
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . X . |
+7 | . . . . . X . . |
+6 | X . . . X . . . |
+5 | . X . X . . . . |
+4 | . . . . . . . . |
+3 | . X . X . . . . |
+2 | X . . . X . . . |
+1 | . . . . . X . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 4620711952330133792
+DEBUG MAGIC CHECK for square 27 (4,3)
+ bishopMask = 0x40221400142200 popcount=9
+ bishopMagic = 0x2000100208040 shift=55 tableSize=512
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x8041221400140000
+ expected (raygen) = 0x8041221400142241
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . X |
+7 | X . . . . . X . |
+6 | . X . . . X . . |
+5 | . . X . X . . . |
+4 | . . . . . . . . |
+3 | . . X . X . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 9241705379636969472
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . X |
+7 | X . . . . . X . |
+6 | . X . . . X . . |
+5 | . . X . X . . . |
+4 | . . . . . . . . |
+3 | . . X . X . . . |
+2 | . X . . . X . . |
+1 | X . . . . . X . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 9241705379636978241
+DEBUG MAGIC CHECK for square 28 (4,4)
+ bishopMask = 0x2442800284400 popcount=9
+ bishopMagic = 0x800040100400802 shift=55 tableSize=512
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x80442800284480
+ expected (raygen) = 0x182442800284482
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . X |
+6 | . . X . . . X . |
+5 | . . . X . X . . |
+4 | . . . . . . . . |
+3 | . . . X . X . . |
+2 | . . X . . . X . |
+1 | . . . . . . . X |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 36103735610983552
+ expected bitboard:
+  +-----------------+
+8 | X . . . . . . . |
+7 | . X . . . . . X |
+6 | . . X . . . X . |
+5 | . . . X . X . . |
+4 | . . . . . . . . |
+3 | . . . X . X . . |
+2 | . . X . . . X . |
+1 | . X . . . . . X |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 108724279602332802
+DEBUG MAGIC CHECK for square 29 (4,5)
+ bishopMask = 0x4085000500800 popcount=7
+ bishopMagic = 0x4000820080400 shift=57 tableSize=128
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x805000508000
+ expected (raygen) = 0x204885000508804
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . X |
+5 | . . . . X . X . |
+4 | . . . . . . . . |
+3 | . . . . X . X . |
+2 | . . . . . . . X |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 141081091014656
+ expected bitboard:
+  +-----------------+
+8 | . X . . . . . . |
+7 | . . X . . . . . |
+6 | . . . X . . . X |
+5 | . . . . X . X . |
+4 | . . . . . . . . |
+3 | . . . . X . X . |
+2 | . . . X . . . X |
+1 | . . X . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 145390965166737412
+DEBUG MAGIC CHECK for square 30 (4,6)
+ bishopMask = 0x8102000201000 popcount=5
+ bishopMagic = 0x4008080040080 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0xa000a01008
+ expected (raygen) = 0x40810a000a01008
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | . . . . . X . X |
+4 | . . . . . . . . |
+3 | . . . . . X . X |
+2 | . . . . X . . . |
+1 | . . . X . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 687205257224
+ expected bitboard:
+  +-----------------+
+8 | . . X . . . . . |
+7 | . . . X . . . . |
+6 | . . . . X . . . |
+5 | . . . . . X . X |
+4 | . . . . . . . . |
+3 | . . . . . X . X |
+2 | . . . . X . . . |
+1 | . . . X . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 290500455356698632
+DEBUG MAGIC CHECK for square 31 (4,7)
+ bishopMask = 0x10204000402000 popcount=5
+ bishopMagic = 0x200200040100400 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x4000400000
+ expected (raygen) = 0x810204000402010
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | . . . . . . . . |
+5 | . . . . . . X . |
+4 | . . . . . . . . |
+3 | . . . . . . X . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 274882101248
+ expected bitboard:
+  +-----------------+
+8 | . . . X . . . . |
+7 | . . . . X . . . |
+6 | . . . . . X . . |
+5 | . . . . . . X . |
+4 | . . . . . . . . |
+3 | . . . . . . X . |
+2 | . . . . . X . . |
+1 | . . . . X . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 580999811184992272
+DEBUG MAGIC CHECK for square 32 (5,0)
+ bishopMask = 0x4020002040800 popcount=5
+ bishopMagic = 0x80800400080401 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x804020002040000
+ expected (raygen) = 0x804020002040810
+ tableVal bitboard:
+  +-----------------+
+8 | . . . X . . . . |
+7 | . . X . . . . . |
+6 | . X . . . . . . |
+5 | . . . . . . . . |
+4 | . X . . . . . . |
+3 | . . X . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 577588851267338240
+ expected bitboard:
+  +-----------------+
+8 | . . . X . . . . |
+7 | . . X . . . . . |
+6 | . X . . . . . . |
+5 | . . . . . . . . |
+4 | . X . . . . . . |
+3 | . . X . . . . . |
+2 | . . . X . . . . |
+1 | . . . . X . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 577588851267340304
+DEBUG MAGIC CHECK for square 33 (5,1)
+ bishopMask = 0x8040004081000 popcount=5
+ bishopMagic = 0x400040802000100 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x50005081000
+ expected (raygen) = 0x1008050005081020
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . . . |
+6 | X . X . . . . . |
+5 | . . . . . . . . |
+4 | X . X . . . . . |
+3 | . . . X . . . . |
+2 | . . . . X . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 5497642553344
+ expected bitboard:
+  +-----------------+
+8 | . . . . X . . . |
+7 | . . . X . . . . |
+6 | X . X . . . . . |
+5 | . . . . . . . . |
+4 | X . X . . . . . |
+3 | . . . X . . . . |
+2 | . . . . X . . . |
+1 | . . . . . X . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1155178802063085600
+DEBUG MAGIC CHECK for square 34 (5,2)
+ bishopMask = 0x100a000a102000 popcount=7
+ bishopMagic = 0x20080080050800 shift=57 tableSize=128
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x110a000a100000
+ expected (raygen) = 0x20110a000a112040
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | X . . . X . . . |
+6 | . X . X . . . . |
+5 | . . . . . . . . |
+4 | . X . X . . . . |
+3 | . . . . X . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 4796069889179648
+ expected bitboard:
+  +-----------------+
+8 | . . . . . X . . |
+7 | X . . . X . . . |
+6 | . X . X . . . . |
+5 | . . . . . . . . |
+4 | . X . X . . . . |
+3 | X . . . X . . . |
+2 | . . . . . X . . |
+1 | . . . . . . X . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 2310639079102947392
+DEBUG MAGIC CHECK for square 35 (5,3)
+ bishopMask = 0x22140014224000 popcount=9
+ bishopMagic = 0x4040040404040404 shift=55 tableSize=512
+MISMATCH at permutation i=1 index=2
+ blockers masked   = 0x4000
+ tableVal (magic)  = 0x102140014020100
+ expected (raygen) = 0x4122140014224100
+ tableVal bitboard:
+  +-----------------+
+8 | X . . . . . . . |
+7 | . X . . . . . . |
+6 | . . X . X . . . |
+5 | . . . . . . . . |
+4 | . . X . X . . . |
+3 | . X . . . . . . |
+2 | X . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 72642534559580416
+ expected bitboard:
+  +-----------------+
+8 | X . . . . . X . |
+7 | . X . . . X . . |
+6 | . . X . X . . . |
+5 | . . . . . . . . |
+4 | . . X . X . . . |
+3 | . X . . . X . . |
+2 | X . . . . . X . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 4693335752243822848
+DEBUG MAGIC CHECK for square 36 (5,4)
+ bishopMask = 0x44280028440200 popcount=9
+ bishopMagic = 0x202020202020202 shift=55 tableSize=512
+MISMATCH at permutation i=2 index=16
+ blockers masked   = 0x40000
+ tableVal (magic)  = 0x8044280028448201
+ expected (raygen) = 0x8244280028448000
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . X |
+7 | . . X . . . X . |
+6 | . . . X . X . . |
+5 | . . . . . . . . |
+4 | . . . X . X . . |
+3 | . . X . . . X . |
+2 | . X . . . . . X |
+1 | X . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 9242556316411789825
+ expected bitboard:
+  +-----------------+
+8 | . X . . . . . X |
+7 | . . X . . . X . |
+6 | . . . X . X . . |
+5 | . . . . . . . . |
+4 | . . . X . X . . |
+3 | . . X . . . X . |
+2 | . . . . . . . X |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 9386671504487645184
+DEBUG MAGIC CHECK for square 37 (5,5)
+ bishopMask = 0x8500050080400 popcount=7
+ bishopMagic = 0x101010101010101 shift=57 tableSize=128
+MISMATCH at permutation i=2 index=4
+ blockers masked   = 0x80000
+ tableVal (magic)  = 0x88500050880402
+ expected (raygen) = 0x488500050880000
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . X . . . X |
+6 | . . . . X . X . |
+5 | . . . . . . . . |
+4 | . . . . X . X . |
+3 | . . . X . . . X |
+2 | . . X . . . . . |
+1 | . X . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 38368559113962498
+ expected bitboard:
+  +-----------------+
+8 | . . X . . . . . |
+7 | . . . X . . . X |
+6 | . . . . X . X . |
+5 | . . . . . . . . |
+4 | . . . . X . X . |
+3 | . . . X . . . X |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 326598935265673216
+DEBUG MAGIC CHECK for square 38 (5,6)
+ bishopMask = 0x10200020100800 popcount=5
+ bishopMagic = 0x2004208a004208 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x810a000a0100800
+ expected (raygen) = 0x810a000a0100804
+ tableVal bitboard:
+  +-----------------+
+8 | . . . X . . . . |
+7 | . . . . X . . . |
+6 | . . . . . X . X |
+5 | . . . . . . . . |
+4 | . . . . . X . X |
+3 | . . . . X . . . |
+2 | . . . X . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 581140276476643328
+ expected bitboard:
+  +-----------------+
+8 | . . . X . . . . |
+7 | . . . . X . . . |
+6 | . . . . . X . X |
+5 | . . . . . . . . |
+4 | . . . . . X . X |
+3 | . . . . X . . . |
+2 | . . . X . . . . |
+1 | . . X . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 581140276476643332
+DEBUG MAGIC CHECK for square 39 (5,7)
+ bishopMask = 0x20400040201000 popcount=5
+ bishopMagic = 0x40040844404084 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x1020400040201000
+ expected (raygen) = 0x1020400040201008
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . X . . . |
+7 | . . . . . X . . |
+6 | . . . . . . X . |
+5 | . . . . . . . . |
+4 | . . . . . . X . |
+3 | . . . . . X . . |
+2 | . . . . X . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1161999073681608704
+ expected bitboard:
+  +-----------------+
+8 | . . . . X . . . |
+7 | . . . . . X . . |
+6 | . . . . . . X . |
+5 | . . . . . . . . |
+4 | . . . . . . X . |
+3 | . . . . . X . . |
+2 | . . . . X . . . |
+1 | . . . X . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1161999073681608712
+DEBUG MAGIC CHECK for square 40 (6,0)
+ bishopMask = 0x2000204081000 popcount=5
+ bishopMagic = 0x401004020080100 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x2000204000000
+ expected (raygen) = 0x402000204081020
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . X . . . . . . |
+6 | . . . . . . . . |
+5 | . X . . . . . . |
+4 | . . X . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 562958610464768
+ expected bitboard:
+  +-----------------+
+8 | . . X . . . . . |
+7 | . X . . . . . . |
+6 | . . . . . . . . |
+5 | . X . . . . . . |
+4 | . . X . . . . . |
+3 | . . . X . . . . |
+2 | . . . . X . . . |
+1 | . . . . . X . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 288793334762704928
+DEBUG MAGIC CHECK for square 41 (6,1)
+ bishopMask = 0x4000408102000 popcount=5
+ bishopMagic = 0x808080808080808 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x5000500000000
+ expected (raygen) = 0x805000508102040
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | X . X . . . . . |
+6 | . . . . . . . . |
+5 | X . X . . . . . |
+4 | . . . . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1407396358389760
+ expected bitboard:
+  +-----------------+
+8 | . . . X . . . . |
+7 | X . X . . . . . |
+6 | . . . . . . . . |
+5 | X . X . . . . . |
+4 | . . . X . . . . |
+3 | . . . . X . . . |
+2 | . . . . . X . . |
+1 | . . . . . . X . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 577868148797087808
+DEBUG MAGIC CHECK for square 42 (6,2)
+ bishopMask = 0xa000a10204000 popcount=7
+ bishopMagic = 0x404040404040404 shift=57 tableSize=128
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x10a000a01000000
+ expected (raygen) = 0x110a000a11204080
+ tableVal bitboard:
+  +-----------------+
+8 | X . . . . . . . |
+7 | . X . X . . . . |
+6 | . . . . . . . . |
+5 | . X . X . . . . |
+4 | X . . . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 74872386771484672
+ expected bitboard:
+  +-----------------+
+8 | X . . . X . . . |
+7 | . X . X . . . . |
+6 | . . . . . . . . |
+5 | . X . X . . . . |
+4 | X . . . X . . . |
+3 | . . . . . X . . |
+2 | . . . . . . X . |
+1 | . . . . . . . X |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1227793891648880768
+DEBUG MAGIC CHECK for square 43 (6,3)
+ bishopMask = 0x14001422400000 popcount=7
+ bishopMagic = 0x202020202020202 shift=57 tableSize=128
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x214001402010000
+ expected (raygen) = 0x2214001422418000
+ tableVal bitboard:
+  +-----------------+
+8 | . X . . . . . . |
+7 | . . X . X . . . |
+6 | . . . . . . . . |
+5 | . . X . X . . . |
+4 | . X . . . . . . |
+3 | X . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 149744773543034880
+ expected bitboard:
+  +-----------------+
+8 | . X . . . X . . |
+7 | . . X . X . . . |
+6 | . . . . . . . . |
+5 | . . X . X . . . |
+4 | . X . . . X . . |
+3 | X . . . . . X . |
+2 | . . . . . . . X |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 2455587783297826816
+DEBUG MAGIC CHECK for square 44 (6,4)
+ bishopMask = 0x28002844020000 popcount=7
+ bishopMagic = 0x101010101010101 shift=57 tableSize=128
+MISMATCH at permutation i=4 index=32
+ blockers masked   = 0x40000000
+ tableVal (magic)  = 0x428002804020100
+ expected (raygen) = 0x4428002844020100
+ tableVal bitboard:
+  +-----------------+
+8 | . . X . . . . . |
+7 | . . . X . X . . |
+6 | . . . . . . . . |
+5 | . . . X . X . . |
+4 | . . X . . . . . |
+3 | . X . . . . . . |
+2 | X . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 299489547086070016
+ expected bitboard:
+  +-----------------+
+8 | . . X . . . X . |
+7 | . . . X . X . . |
+6 | . . . . . . . . |
+5 | . . . X . X . . |
+4 | . . X . . . X . |
+3 | . X . . . . . . |
+2 | X . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 4911175566587199744
+DEBUG MAGIC CHECK for square 45 (6,5)
+ bishopMask = 0x50005008040200 popcount=7
+ bishopMagic = 0x2004208a004208 shift=57 tableSize=128
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x8050005080000000
+ expected (raygen) = 0x8850005088040201
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . X |
+7 | . . . . X . X . |
+6 | . . . . . . . . |
+5 | . . . . X . X . |
+4 | . . . . . . . X |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 9245890380736495616
+ expected bitboard:
+  +-----------------+
+8 | . . . X . . . X |
+7 | . . . . X . X . |
+6 | . . . . . . . . |
+5 | . . . . X . X . |
+4 | . . . X . . . X |
+3 | . . X . . . . . |
+2 | . X . . . . . . |
+1 | X . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 9822351133174399489
+DEBUG MAGIC CHECK for square 46 (6,6)
+ bishopMask = 0x20002010080400 popcount=5
+ bishopMagic = 0x40040844404084 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x10a000a010080400
+ expected (raygen) = 0x10a000a010080402
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . X . . . |
+7 | . . . . . X . X |
+6 | . . . . . . . . |
+5 | . . . . . X . X |
+4 | . . . . X . . . |
+3 | . . . X . . . . |
+2 | . . X . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1197958188344280064
+ expected bitboard:
+  +-----------------+
+8 | . . . . X . . . |
+7 | . . . . . X . X |
+6 | . . . . . . . . |
+5 | . . . . . X . X |
+4 | . . . . X . . . |
+3 | . . . X . . . . |
+2 | . . X . . . . . |
+1 | . X . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1197958188344280066
+DEBUG MAGIC CHECK for square 47 (6,7)
+ bishopMask = 0x40004020100800 popcount=5
+ bishopMagic = 0x401004020080100 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x2040004000000000
+ expected (raygen) = 0x2040004020100804
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . X . . |
+7 | . . . . . . X . |
+6 | . . . . . . . . |
+5 | . . . . . . X . |
+4 | . . . . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 2323857682601082880
+ expected bitboard:
+  +-----------------+
+8 | . . . . . X . . |
+7 | . . . . . . X . |
+6 | . . . . . . . . |
+5 | . . . . . . X . |
+4 | . . . . . X . . |
+3 | . . . . X . . . |
+2 | . . . X . . . . |
+1 | . . X . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 2323857683139004420
+DEBUG MAGIC CHECK for square 48 (7,0)
+ bishopMask = 0x20408102000 popcount=5
+ bishopMagic = 0x808080808080808 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x200020408102000
+ expected (raygen) = 0x200020408102040
+ tableVal bitboard:
+  +-----------------+
+8 | . X . . . . . . |
+7 | . . . . . . . . |
+6 | . X . . . . . . |
+5 | . . X . . . . . |
+4 | . . . X . . . . |
+3 | . . . . X . . . |
+2 | . . . . . X . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 144117404414255104
+ expected bitboard:
+  +-----------------+
+8 | . X . . . . . . |
+7 | . . . . . . . . |
+6 | . X . . . . . . |
+5 | . . X . . . . . |
+4 | . . . X . . . . |
+3 | . . . . X . . . |
+2 | . . . . . X . . |
+1 | . . . . . . X . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 144117404414255168
+DEBUG MAGIC CHECK for square 49 (7,1)
+ bishopMask = 0x40810204000 popcount=5
+ bishopMagic = 0x404040404040404 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x500050810204000
+ expected (raygen) = 0x500050810204080
+ tableVal bitboard:
+  +-----------------+
+8 | X . X . . . . . |
+7 | . . . . . . . . |
+6 | X . X . . . . . |
+5 | . . . X . . . . |
+4 | . . . . X . . . |
+3 | . . . . . X . . |
+2 | . . . . . . X . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 360293502378065920
+ expected bitboard:
+  +-----------------+
+8 | X . X . . . . . |
+7 | . . . . . . . . |
+6 | X . X . . . . . |
+5 | . . . X . . . . |
+4 | . . . . X . . . |
+3 | . . . . . X . . |
+2 | . . . . . . X . |
+1 | . . . . . . . X |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 360293502378066048
+DEBUG MAGIC CHECK for square 50 (7,2)
+ bishopMask = 0xa1020400000 popcount=5
+ bishopMagic = 0x202020202020202 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0xa000a1020408000
+ expected (raygen) = 0xa000a1120408000
+ tableVal bitboard:
+  +-----------------+
+8 | . X . X . . . . |
+7 | . . . . . . . . |
+6 | . X . X . . . . |
+5 | . . . . X . . . |
+4 | . . . . . X . . |
+3 | . . . . . . X . |
+2 | . . . . . . . X |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 720587004756131840
+ expected bitboard:
+  +-----------------+
+8 | . X . X . . . . |
+7 | . . . . . . . . |
+6 | . X . X . . . . |
+5 | X . . . X . . . |
+4 | . . . . . X . . |
+3 | . . . . . . X . |
+2 | . . . . . . . X |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 720587009051099136
+DEBUG MAGIC CHECK for square 51 (7,3)
+ bishopMask = 0x142240000000 popcount=5
+ bishopMagic = 0x101010101010101 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x1400142040800000
+ expected (raygen) = 0x1400142241800000
+ tableVal bitboard:
+  +-----------------+
+8 | . . X . X . . . |
+7 | . . . . . . . . |
+6 | . . X . X . . . |
+5 | . . . . . X . . |
+4 | . . . . . . X . |
+3 | . . . . . . . X |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1441174009512198144
+ expected bitboard:
+  +-----------------+
+8 | . . X . X . . . |
+7 | . . . . . . . . |
+6 | . . X . X . . . |
+5 | . X . . . X . . |
+4 | X . . . . . X . |
+3 | . . . . . . . X |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1441174018118909952
+DEBUG MAGIC CHECK for square 52 (7,4)
+ bishopMask = 0x284402000000 popcount=5
+ bishopMagic = 0x2004208a004208 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x2800284080000000
+ expected (raygen) = 0x2800284482010000
+ tableVal bitboard:
+  +-----------------+
+8 | . . . X . X . . |
+7 | . . . . . . . . |
+6 | . . . X . X . . |
+5 | . . . . . . X . |
+4 | . . . . . . . X |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 2882348019007619072
+ expected bitboard:
+  +-----------------+
+8 | . . . X . X . . |
+7 | . . . . . . . . |
+6 | . . . X . X . . |
+5 | . . X . . . X . |
+4 | . X . . . . . X |
+3 | X . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 2882348036221108224
+DEBUG MAGIC CHECK for square 53 (7,5)
+ bishopMask = 0x500804020000 popcount=5
+ bishopMagic = 0x40040844404084 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x5000508000000000
+ expected (raygen) = 0x5000508804020100
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . X . X . |
+7 | . . . . . . . . |
+6 | . . . . X . X . |
+5 | . . . . . . . X |
+4 | . . . . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 5764696033720270848
+ expected bitboard:
+  +-----------------+
+8 | . . . . X . X . |
+7 | . . . . . . . . |
+6 | . . . . X . X . |
+5 | . . . X . . . X |
+4 | . . X . . . . . |
+3 | . X . . . . . . |
+2 | X . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 5764696068147249408
+DEBUG MAGIC CHECK for square 54 (7,6)
+ bishopMask = 0x201008040200 popcount=5
+ bishopMagic = 0x0 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0xa000a00000000000
+ expected (raygen) = 0xa000a01008040201
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . X . X |
+7 | . . . . . . . . |
+6 | . . . . . X . X |
+5 | . . . . . . . . |
+4 | . . . . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 11529390967928913920
+ expected bitboard:
+  +-----------------+
+8 | . . . . . X . X |
+7 | . . . . . . . . |
+6 | . . . . . X . X |
+5 | . . . . X . . . |
+4 | . . . X . . . . |
+3 | . . X . . . . . |
+2 | . X . . . . . . |
+1 | X . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 11529391036782871041
+DEBUG MAGIC CHECK for square 55 (7,7)
+ bishopMask = 0x402010080400 popcount=5
+ bishopMagic = 0x0 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x4000400000000000
+ expected (raygen) = 0x4000402010080402
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . X . |
+7 | . . . . . . . . |
+6 | . . . . . . X . |
+5 | . . . . . . . . |
+4 | . . . . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 4611756387171565568
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . X . |
+7 | . . . . . . . . |
+6 | . . . . . . X . |
+5 | . . . . . X . . |
+4 | . . . . X . . . |
+3 | . . . X . . . . |
+2 | . . X . . . . . |
+1 | . X . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 4611756524879479810
+DEBUG MAGIC CHECK for square 56 (8,0)
+ bishopMask = 0x2040810204000 popcount=6
+ bishopMagic = 0x0 shift=58 tableSize=64
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x2000000000000
+ expected (raygen) = 0x2040810204080
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . X . . . . . . |
+6 | . . . . . . . . |
+5 | . . . . . . . . |
+4 | . . . . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 562949953421312
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . X . . . . . . |
+6 | . . X . . . . . |
+5 | . . . X . . . . |
+4 | . . . . X . . . |
+3 | . . . . . X . . |
+2 | . . . . . . X . |
+1 | . . . . . . . X |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 567382630219904
+DEBUG MAGIC CHECK for square 57 (8,1)
+ bishopMask = 0x4081020400000 popcount=5
+ bishopMagic = 0x0 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x5000000000000
+ expected (raygen) = 0x5081020408000
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | X . X . . . . . |
+6 | . . . . . . . . |
+5 | . . . . . . . . |
+4 | . . . . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1407374883553280
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | X . X . . . . . |
+6 | . . . X . . . . |
+5 | . . . . X . . . |
+4 | . . . . . X . . |
+3 | . . . . . . X . |
+2 | . . . . . . . X |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 1416240237150208
+DEBUG MAGIC CHECK for square 58 (8,2)
+ bishopMask = 0xa102040000000 popcount=5
+ bishopMagic = 0x0 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0xa000000000000
+ expected (raygen) = 0xa112040800000
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . X . X . . . . |
+6 | . . . . . . . . |
+5 | . . . . . . . . |
+4 | . . . . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 2814749767106560
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . X . X . . . . |
+6 | X . . . X . . . |
+5 | . . . . . X . . |
+4 | . . . . . . X . |
+3 | . . . . . . . X |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 2833579985862656
+DEBUG MAGIC CHECK for square 59 (8,3)
+ bishopMask = 0x14224000000000 popcount=5
+ bishopMagic = 0x0 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x14000000000000
+ expected (raygen) = 0x14224180000000
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . X . X . . . |
+6 | . . . . . . . . |
+5 | . . . . . . . . |
+4 | . . . . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 5629499534213120
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . X . X . . . |
+6 | . X . . . X . . |
+5 | X . . . . . X . |
+4 | . . . . . . . X |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 5667164249915392
+DEBUG MAGIC CHECK for square 60 (8,4)
+ bishopMask = 0x28440200000000 popcount=5
+ bishopMagic = 0x0 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x28000000000000
+ expected (raygen) = 0x28448201000000
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . X . X . . |
+6 | . . . . . . . . |
+5 | . . . . . . . . |
+4 | . . . . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 11258999068426240
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . X . X . . |
+6 | . . X . . . X . |
+5 | . X . . . . . X |
+4 | X . . . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 11334324221640704
+DEBUG MAGIC CHECK for square 61 (8,5)
+ bishopMask = 0x50080402000000 popcount=5
+ bishopMagic = 0x0 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x50000000000000
+ expected (raygen) = 0x50880402010000
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . X . X . |
+6 | . . . . . . . . |
+5 | . . . . . . . . |
+4 | . . . . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 22517998136852480
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . X . X . |
+6 | . . . X . . . X |
+5 | . . X . . . . . |
+4 | . X . . . . . . |
+3 | X . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 22667548931719168
+DEBUG MAGIC CHECK for square 62 (8,6)
+ bishopMask = 0x20100804020000 popcount=5
+ bishopMagic = 0x0 shift=59 tableSize=32
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0xa0000000000000
+ expected (raygen) = 0xa0100804020100
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . X . X |
+6 | . . . . . . . . |
+5 | . . . . . . . . |
+4 | . . . . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 45035996273704960
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . X . X |
+6 | . . . . X . . . |
+5 | . . . X . . . . |
+4 | . . X . . . . . |
+3 | . X . . . . . . |
+2 | X . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 45053622886727936
+DEBUG MAGIC CHECK for square 63 (8,7)
+ bishopMask = 0x40201008040200 popcount=6
+ bishopMagic = 0x0 shift=58 tableSize=64
+MISMATCH at permutation i=0 index=0
+ blockers masked   = 0x0
+ tableVal (magic)  = 0x40000000000000
+ expected (raygen) = 0x40201008040201
+ tableVal bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . X . |
+6 | . . . . . . . . |
+5 | . . . . . . . . |
+4 | . . . . . . . . |
+3 | . . . . . . . . |
+2 | . . . . . . . . |
+1 | . . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 18014398509481984
+ expected bitboard:
+  +-----------------+
+8 | . . . . . . . . |
+7 | . . . . . . X . |
+6 | . . . . . X . . |
+5 | . . . . X . . . |
+4 | . . . X . . . . |
+3 | . . X . . . . . |
+2 | . X . . . . . . |
+1 | X . . . . . . . |
+  +-----------------+
+    a b c d e f g h
+Bitboard Decimal: 18049651735527937
